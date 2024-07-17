@@ -1,0 +1,1 @@
+Welcome to the second maps file. And the boolean value is set to true

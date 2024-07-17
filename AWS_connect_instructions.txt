@@ -1,0 +1,22 @@
+AUTHENTICATING AWS USING AWS CLI:
+
+1. Login to AWS console and create an iam user
+2. Get the access key id and secret access key for the user
+3. Downlaod AWS cli and launch
+4. Use the below command to configure
+	aws configure --profile <profile-name>
+5. Verify if the connection is true by below command
+	aws iam help
+	aws iam list-users --profile <profile-name>
+
+	
+AUTHENTICATING DIRECTLY FROM TERRAFORM:
+
+In the provider section update as below
+provider "aws" {
+  region     = "ap-south-1"
+  access_key = "agduye65556wgduegu"
+  secret_key = "gad7wet67eyfhfeyhgfuyeguyg"
+}
+
+Note : The access_key and secret_key mentioned above are just the samples

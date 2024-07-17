@@ -1,0 +1,38 @@
+terraform -help / terraform -h : To get the see all the commands
+
+terraform -version : Shows the version of terraform installed
+
+terraform init : Preparing the working driectory to run further terraform commands
+
+terraform fmt  : Formats all the config files(.tf) in standard format
+
+terraform validate : Checks whether the configuration is valida
+
+terraform plan : Shows all the changes by current config if any. Else shows "No changes"
+
+terraform apply : This command applies all the infra changes
+    -> terraform apply -auto-approve : Doesn't wait for the user to enter Yes and builds the infra
+    -> terraform apply -lock=true : Locks the state file
+    -> terraform apply -no-color : Output will not have any color
+    -> terraform apply -input=true : When input = true is set it will ask for inpur variables if not set in .tfvars or variables.tf
+    -> terraform apply -refresh=true : Updates the state file same as the real time infra
+    -> terraform apply -state-out=path : Here path represents the full path where we need to write state file
+    -> terraform apply -target=resource : Here we will limit the operations or changes to be done for a particular resource
+    -> terraform apply -var "variable=value" : Takes the defined variable
+    -> terraform apply -var-file=filepath : This will take input as .tfvars files from the path defined if not in the current driectory
+
+terrform import : To associate existing infra with a terraform resource
+
+terraform login [hostname] : Retrieves an authentication token for the given hostname, if it supports
+  automatic login, and saves it in a credentials file in your home directory
+
+terraform logout [hostname] : Removes locally-stored credentials for specified hostname.
+
+terraform output [options] [NAME] : If we don't specify the name it will print all the output values.
+    -> Options : -no-color, -json, -state=path, -raw
+
+terraform refresh : Updates the local state file with the remotes systems
+
+terraform taint : Terraform uses the term "tainted" to describe a resource instance which may not be fully functional, either because its creation partially failed or because you've manually marked it as such using this command
+
+terraform untaint : Remove the tainted state for a resource instance
